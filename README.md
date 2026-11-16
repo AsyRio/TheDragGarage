@@ -10,12 +10,16 @@ Tugas Akhir Praktikum Pemrograman Perangkat Bergerak (PPB) 2026, dikerjakan seca
 
 | | Tautan |
 |---|---|
-| Aplikasi (web/PWA) | _(isi dengan URL Vercel web)_ |
-| API | _(isi dengan URL Vercel api)_ |
+| Aplikasi (web/PWA) | https://drag-garage-web-three.vercel.app |
+| API | https://drag-garage-api.vercel.app (contoh: [`/api/motors`](https://drag-garage-api.vercel.app/api/motors)) |
 
-| Beranda | Daftar Motor | Detail Motor | Leaderboard |
-|---|---|---|---|
-| _(screenshot)_ | _(screenshot)_ | _(screenshot)_ | _(screenshot)_ |
+| Beranda | Daftar Motor | Detail Motor |
+|---|---|---|
+| <img src="docs/screenshots/beranda.png" width="240" alt="Beranda"> | <img src="docs/screenshots/daftar-motor.png" width="240" alt="Daftar Motor"> | <img src="docs/screenshots/detail-motor.png" width="240" alt="Detail Motor"> |
+
+| Leaderboard | Detail Hasil | Profil |
+|---|---|---|
+| <img src="docs/screenshots/leaderboard.png" width="240" alt="Leaderboard"> | <img src="docs/screenshots/detail-hasil.png" width="240" alt="Detail Hasil"> | <img src="docs/screenshots/profil.png" width="240" alt="Profil"> |
 
 ## Fitur
 
