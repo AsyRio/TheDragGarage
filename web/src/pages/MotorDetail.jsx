@@ -46,9 +46,11 @@ export default function MotorDetail() {
 
       <section className="card">
         <h2>Spesifikasi</h2>
-        <SpecBar label="Tenaga" value={motor.horsepower} unit="HP" max={40} />
-        <SpecBar label="Bobot" value={motor.weight_kg} unit="kg" max={150} />
-        <SpecBar label="Top speed" value={motor.top_speed_kmh} unit="km/j" max={200} />
+        {/* Batas bar disesuaikan dengan motor terkuat di katalog (1000cc) */}
+        <SpecBar label="Tenaga" value={motor.horsepower} unit="HP" max={200} />
+        <SpecBar label="Bobot" value={motor.weight_kg} unit="kg" max={200} />
+        <SpecBar label="Top speed" value={motor.top_speed_kmh} unit="km/j" max={300} />
+        <p className="muted small">Angka tenaga, bobot, dan top speed adalah estimasi dari stat di game.</p>
       </section>
 
       <section className="card">

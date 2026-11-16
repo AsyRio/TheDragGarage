@@ -131,15 +131,9 @@ const silhouette = (accent) => `<svg xmlns="http://www.w3.org/2000/svg" viewBox=
 </svg>
 `;
 
-// Nama file mengikuti aturan seed: huruf kecil, spasi jadi strip
-const slug = (name) => name.toLowerCase().replace(/\s+/g, '-');
+// Hanya sprite cadangan. Sprite motor asli (PNG) berasal dari game dan ada di public/motors/
 const sprites = [
   ['motor-fallback', '#f97316'], // cadangan jika gambar gagal dimuat
-  [slug('UB-110'), '#38bdf8'],
-  [slug('Kilat 135'), '#a3e635'],
-  [slug('Banteng SR'), '#f472b6'],
-  [slug('Rajawali 200'), '#f97316'],
-  [slug('Naga X-250'), '#ef4444'],
 ];
 for (const [name, accent] of sprites) {
   const file = path.join(publicDir, 'motors', `${name}.svg`);

@@ -2,7 +2,7 @@
 
 Aplikasi pendamping untuk game drag race motor 2D **Indonesian Drag Race** (dibuat dengan Godot). DragGarage menampilkan katalog motor beserta spesifikasinya dan leaderboard hasil balap per trek. Aplikasi berbentuk **PWA** sehingga bisa di-install di HP dan tetap terbuka saat offline.
 
-> **Catatan:** game Indonesian Drag Race belum dipublikasikan, jadi aplikasi ini berdiri sendiri dan seluruh datanya berasal dari **data contoh (seed)**. Semua nama motor bersifat fiktif ("terinspirasi" saja), tanpa merek atau logo asli.
+> **Catatan:** game Indonesian Drag Race belum dipublikasikan, jadi aplikasi ini berdiri sendiri dan seluruh datanya berasal dari **data contoh (seed)** yang diekspor dari game. Daftar motor, nama, transmisi, harga, dan sprite berasal dari game. Nilai cc, tenaga (HP), bobot, dan top speed adalah **estimasi** yang diturunkan dari stat 0-100 di game (bukan angka resmi), sedangkan hasil balap di leaderboard adalah data contoh.
 
 Tugas Akhir Praktikum Pemrograman Perangkat Bergerak (PPB) 2026, dikerjakan secara individu.
 
@@ -69,9 +69,9 @@ DragGarage/
 │   └── package.json
 ├── web/                      # Frontend PWA (React + Vite)
 │   ├── public/
-│   │   ├── motors/           # Sprite motor (SVG placeholder, bisa diganti)
+│   │   ├── motors/           # Sprite motor dari game (PNG) + motor-fallback.svg
 │   │   └── icons/            # Ikon PWA
-│   ├── scripts/              # Skrip pembuat ikon dan sprite placeholder
+│   ├── scripts/              # Skrip pembuat ikon PWA dan sprite cadangan
 │   ├── src/
 │   │   ├── components/       # BottomNav, MotorImage, MotorCard, dll.
 │   │   ├── pages/            # Halaman aplikasi
@@ -172,7 +172,7 @@ Deploy API terlebih dulu agar URL-nya bisa dipakai di `VITE_API_URL`. Setelah me
 
 ## Mengganti Sprite Motor
 
-Letakkan gambar di `web/public/motors/` dengan nama file sama seperti kolom `image_url` di tabel `motors` (contoh `/motors/ub-110.svg`). Jika formatnya berbeda (PNG/WebP), perbarui `image_url` di Supabase. Jika gambar tidak ditemukan, aplikasi otomatis memakai `motor-fallback.svg`.
+Letakkan gambar di `web/public/motors/` dengan nama file sama seperti kolom `image_url` di tabel `motors` (contoh `/motors/r150.png`). Jika formatnya berbeda (PNG/WebP), perbarui `image_url` di Supabase. Jika gambar tidak ditemukan, aplikasi otomatis memakai `motor-fallback.svg`.
 
 ## Pembuat
 

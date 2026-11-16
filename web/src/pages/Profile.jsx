@@ -22,7 +22,8 @@ export default function Profile() {
         </p>
         <p className="desc">
           Game-nya belum dipublikasikan, jadi aplikasi ini berdiri sendiri dan datanya berasal dari
-          data contoh (seed). Semua nama motor bersifat fiktif.
+          data contoh (seed) yang diekspor dari game. Motor dan sprite berasal dari game, sedangkan angka
+          cc, tenaga, bobot, dan top speed adalah estimasi dari stat di game.
         </p>
       </section>
 

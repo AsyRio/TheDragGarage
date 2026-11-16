@@ -25,7 +25,7 @@ export default function Motors() {
   return (
     <>
       <h1 className="page-title">Motor</h1>
-      <p className="page-sub">Katalog motor fiktif di game, terinspirasi dari gaya motor drag.</p>
+      <p className="page-sub">Katalog motor dari game Indonesian Drag Race.</p>
 
       <input
         type="search"
