@@ -1,0 +1,19 @@
+# Dependensi dan hasil build
+node_modules/
+dist/
+dev-dist/
+
+# Rahasia (jangan pernah di-commit)
+.env
+.env.*
+!.env.example
+
+# Vercel dan log
+.vercel/
+*.log
+
+# Sistem / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.claude/
