@@ -8,7 +8,9 @@ export default function MotorImage({ src, alt = '', className = '' }) {
   const [gagal, setGagal] = useState(false);
 
   // Reset status gagal jika src berganti (komponen dipakai ulang)
-  useEffect(() => setGagal(false), [src]);
+  useEffect(() => {
+    setGagal(false);
+  }, [src]);
 
   return (
     <div className={`motor-img ${className}`}>
