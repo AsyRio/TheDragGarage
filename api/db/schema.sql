@@ -44,6 +44,12 @@ create table race_results (
   created_at       timestamptz not null default now()
 );
 
+-- Aktifkan RLS tanpa policy: akses langsung via publishable key ditolak,
+-- hanya API (memakai secret key, yang melewati RLS) yang bisa membaca/menulis.
+alter table motors enable row level security;
+alter table tracks enable row level security;
+alter table race_results enable row level security;
+
 -- Index untuk mempercepat filter dan pengurutan leaderboard
 create index idx_results_track on race_results(track_id);
 create index idx_results_motor on race_results(motor_id);
