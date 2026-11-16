@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import Intro, { perluIntro } from './components/Intro';
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Motors from './pages/Motors';
@@ -10,6 +12,18 @@ import NotFound from './pages/NotFound';
 
 // Daftar route aplikasi; semua halaman dibungkus Layout (bottom nav)
 export default function App() {
+  // Intro tampil sekali per sesi; setelah selesai langsung masuk ke halaman yang dibuka (beranda)
+  const [intro, setIntro] = useState(perluIntro);
+
+  return (
+    <>
+      {intro && <Intro onDone={() => setIntro(false)} />}
+      <AppRoutes />
+    </>
+  );
+}
+
+function AppRoutes() {
   return (
     <Routes>
       <Route element={<Layout />}>

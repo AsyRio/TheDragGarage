@@ -28,6 +28,7 @@ Tugas Akhir Praktikum Pemrograman Perangkat Bergerak (PPB) 2026, dikerjakan seca
 - **Tambah hasil balap:** form sederhana yang mengirim data ke API.
 - **Sprite motor** dengan rasio tetap 2:1, lazy loading, dan fallback otomatis ke siluet generik jika gambar tidak ada.
 - **PWA:** bisa di-install, service worker dengan precache aset, cache API (NetworkFirst), dan banner saat offline.
+- **Intro animasi:** saat aplikasi dibuka, muncul judul DragGarage, motor wheelie lalu melaju keluar layar, kemudian masuk ke beranda. Hanya tampil sekali per sesi, bisa dilewati, dan otomatis dilewati jika perangkat memakai pengaturan "kurangi animasi".
 - **Mobile-first:** konten maksimal 480 px di tengah layar saat dibuka di desktop, tema gelap bernuansa balap.
 
 ### Halaman (6 halaman)

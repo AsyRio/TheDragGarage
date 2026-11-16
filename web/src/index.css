@@ -204,3 +204,89 @@ a.card:active { transform: scale(.985); border-color: var(--accent); }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+/* ===== Intro: judul, motor wheelie, lalu melaju keluar layar (total 4,2 detik) ===== */
+.intro {
+  position: fixed; inset: 0; z-index: 100; overflow: hidden;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
+  background: radial-gradient(circle at 50% 62%, #2a1405 0%, var(--bg) 62%);
+}
+/* Semua animasi baru berjalan setelah sprite termuat (kelas .jalan) */
+.intro.jalan { animation: introOverlay 4.2s linear forwards; }
+.intro-title { text-align: center; opacity: 0; padding: 0 16px; }
+.intro.jalan .intro-title { animation: introTitle 4.2s ease-out forwards; }
+.intro-title h1 {
+  font-size: clamp(2.3rem, 12vw, 3.8rem); font-weight: 800; font-style: italic;
+  text-transform: uppercase; letter-spacing: 1px; line-height: 1;
+}
+.intro-title h1 span { color: var(--accent); }
+.intro-title p { color: var(--muted); font-size: .8rem; margin-top: 10px; letter-spacing: 2px; text-transform: uppercase; }
+
+.intro-stage { position: relative; width: 100%; height: 280px; }
+.intro-road {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+  background: linear-gradient(90deg, transparent, var(--accent) 30%, var(--accent-2) 70%, transparent);
+}
+.intro-bike {
+  position: absolute; bottom: 3px; left: 50%;
+  width: min(78vw, 340px); margin-left: calc(min(78vw, 340px) / -2);
+  transform: translateX(-120vw);
+}
+.intro.jalan .intro-bike { animation: introRide 4.2s linear forwards; }
+.intro-bike img {
+  display: block; width: 100%; filter: drop-shadow(0 12px 14px rgba(0, 0, 0, .6));
+  transform-origin: 17% 94%; /* titik putar: ban belakang menyentuh jalan */
+}
+.intro.jalan .intro-bike img { animation: introWheelie 4.2s linear forwards; }
+
+/* Garis kecepatan saat motor melaju */
+.intro-lines span {
+  position: absolute; left: 22%; height: 3px; border-radius: 2px; opacity: 0;
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, .85));
+}
+.intro-lines span:nth-child(1) { bottom: 40px; width: 150px; }
+.intro-lines span:nth-child(2) { bottom: 80px; width: 110px; }
+.intro-lines span:nth-child(3) { bottom: 120px; width: 170px; }
+.intro-lines span:nth-child(4) { bottom: 160px; width: 90px; }
+.intro.jalan .intro-lines span { animation: introLines 4.2s ease-in forwards; }
+.intro.jalan .intro-lines span:nth-child(2) { animation-delay: .06s; }
+.intro.jalan .intro-lines span:nth-child(3) { animation-delay: .12s; }
+.intro.jalan .intro-lines span:nth-child(4) { animation-delay: .18s; }
+
+.intro-skip {
+  position: absolute; bottom: calc(24px + env(safe-area-inset-bottom)); left: 50%;
+  transform: translateX(-50%); padding: 8px 20px; font-size: .85rem; cursor: pointer;
+}
+
+/* Motor masuk dari kiri, diam saat wheelie, lalu melaju keluar ke kanan */
+@keyframes introRide {
+  0%   { transform: translateX(-120vw); animation-timing-function: cubic-bezier(.15, .7, .3, 1); }
+  25%  { transform: translateX(0); }
+  52%  { transform: translateX(0); animation-timing-function: cubic-bezier(.6, 0, 1, .7); }
+  82%  { transform: translateX(125vw); }
+  100% { transform: translateX(125vw); }
+}
+/* Wheelie: bodi terangkat dengan titik putar di ban belakang */
+@keyframes introWheelie {
+  0%, 24% { transform: rotate(0deg); animation-timing-function: cubic-bezier(.2, .8, .3, 1.15); }
+  34%     { transform: rotate(-30deg); animation-timing-function: ease-in-out; }
+  50%     { transform: rotate(-28deg); animation-timing-function: ease-out; }
+  58%     { transform: rotate(-34deg); animation-timing-function: ease-in-out; }
+  82%, 100% { transform: rotate(-24deg); }
+}
+@keyframes introLines {
+  0%, 52% { opacity: 0; transform: translateX(40px); }
+  60%     { opacity: .9; }
+  82%     { opacity: 0; transform: translateX(-60vw); }
+  100%    { opacity: 0; }
+}
+@keyframes introTitle {
+  0%   { opacity: 0; transform: translateY(-14px) scale(.96); }
+  10%  { opacity: 1; transform: none; }
+  100% { opacity: 1; transform: none; }
+}
+/* Overlay memudar di akhir, memperlihatkan beranda di belakangnya */
+@keyframes introOverlay {
+  0%, 84% { opacity: 1; }
+  100%    { opacity: 0; }
+}
