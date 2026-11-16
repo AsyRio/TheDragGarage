@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" role="img" aria-label="Siluet motor">
+  <g fill="none" stroke="#9ca3af" stroke-width="5">
+    <circle cx="45" cy="68" r="20"/>
+    <circle cx="155" cy="68" r="20"/>
+  </g>
+  <g fill="#9ca3af"><circle cx="45" cy="68" r="4"/><circle cx="155" cy="68" r="4"/></g>
+  <g fill="none" stroke="#f472b6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M45 68 L84 58"/>
+    <path d="M155 68 L133 30"/>
+    <path d="M127 27 L142 24"/>
+  </g>
+  <rect x="84" y="52" width="36" height="18" rx="5" fill="#4b5563"/>
+  <path d="M84 45 Q96 34 114 36 Q126 38 131 46 L84 53 Z" fill="#f472b6"/>
+  <path d="M50 53 Q52 44 66 43 L84 45 L84 53 Z" fill="#e5e7eb"/>
+  <circle cx="141" cy="37" r="4" fill="#fde68a"/>
+</svg>
