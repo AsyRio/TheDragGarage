@@ -5,5 +5,5 @@ export const profile = {
   kampus: 'Universitas Diponegoro',
   mataKuliah: 'Praktikum Pemrograman Perangkat Bergerak (PPB) 2026',
   email: 'riohotasy@gmail.com',
-  github: 'https://github.com/AsyRio/DragGarage',
+  github: 'https://github.com/AsyRio/TheDragGarage',
 };
