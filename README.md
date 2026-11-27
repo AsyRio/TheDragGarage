@@ -25,6 +25,7 @@ Tugas Akhir Praktikum Pemrograman Perangkat Bergerak (PPB) 2026, dikerjakan seca
 
 - **Katalog motor:** pencarian nama, filter transmisi (matic/manual), dan detail lengkap dengan bar spesifikasi (tenaga, bobot, top speed), harga di game, serta deskripsi.
 - **Leaderboard:** peringkat berdasarkan elapsed time (ET) tercepat, difilter per trek (201 m, 402 m, 1000 m).
+- **Tambah motor:** form di halaman Motor untuk menambah motor ke katalog. Jika kolom gambar dikosongkan, aplikasi mencari `/motors/<nama-motor>.png`.
 - **Tambah hasil balap:** form sederhana yang mengirim data ke API.
 - **Sprite motor** dengan rasio tetap 2:1, lazy loading, dan fallback otomatis ke siluet generik jika gambar tidak ada.
 - **PWA:** bisa di-install, service worker dengan precache aset, cache API (NetworkFirst), dan banner saat offline.
@@ -36,7 +37,7 @@ Tugas Akhir Praktikum Pemrograman Perangkat Bergerak (PPB) 2026, dikerjakan seca
 | # | Halaman | Rute | Keterangan |
 |---|---|---|---|
 | 1 | Beranda | `/` | Sapaan, jumlah motor dan trek, top 3 leaderboard, motor unggulan |
-| 2 | Daftar Motor (list) | `/motors` | Pencarian dan filter; setiap kartu bisa diklik |
+| 2 | Daftar Motor (list) | `/motors` | Pencarian, filter, form tambah motor; setiap kartu bisa diklik |
 | 3 | Detail Motor | `/motors/:id` | Spesifikasi, harga, deskripsi, hasil balap terbaik |
 | 4 | Leaderboard (list) | `/leaderboard` | Filter per trek, form tambah hasil; setiap baris bisa diklik |
 | 5 | Detail Hasil | `/results/:id` | Pemain, motor, trek, waktu reaksi, ET, top speed |

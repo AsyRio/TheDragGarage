@@ -42,6 +42,7 @@ async function request(path, { method = 'GET', body } = {}) {
 // Motor
 export const getMotors = (params) => request(`/api/motors${qs(params)}`);
 export const getMotor = (id) => request(`/api/motors/${id}`);
+export const createMotor = (payload) => request('/api/motors', { method: 'POST', body: payload });
 
 // Trek
 export const getTracks = () => request('/api/tracks');

@@ -17,8 +17,8 @@ const rules = {
   image_url: { type: 'string' },
 };
 
-// Buat image_url otomatis dari nama bila tidak diisi: "UB-110" -> /motors/ub-110.svg
-const defaultImage = (name) => `/motors/${name.toLowerCase().replace(/\s+/g, '-')}.svg`;
+// Buat image_url otomatis dari nama bila tidak diisi: "CB150 Verza" -> /motors/cb150-verza.png
+const defaultImage = (name) => `/motors/${name.toLowerCase().replace(/\s+/g, '-')}.png`;
 
 exports.getAll = async (req, res) => {
   const { search, transmission } = req.query;

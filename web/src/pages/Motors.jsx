@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import useFetch from '../hooks/useFetch';
 import useDebounce from '../hooks/useDebounce';
 import { getMotors } from '../services/api';
 import MotorCard from '../components/MotorCard';
+import MotorForm from '../components/MotorForm';
 import { Loading, ErrorMessage, Empty } from '../components/Status';
 
 const FILTER = [
@@ -11,8 +13,10 @@ const FILTER = [
   { value: 'manual', label: 'Manual' },
 ];
 
-// LIST #1: daftar motor dengan pencarian dan filter transmisi
+// LIST #1: daftar motor dengan pencarian, filter transmisi, dan form tambah motor
 export default function Motors() {
+  const navigate = useNavigate();
+  const [showForm, setShowForm] = useState(false);
   const [search, setSearch] = useState('');
   const [transmission, setTransmission] = useState('');
   const keyword = useDebounce(search.trim(), 300); // tunggu user selesai mengetik
@@ -26,6 +30,18 @@ export default function Motors() {
     <>
       <h1 className="page-title">Motor</h1>
       <p className="page-sub">Katalog motor dari game Indonesian Drag Race.</p>
+
+      {showForm ? (
+        <MotorForm
+          // Setelah tersimpan, buka halaman detail motor yang baru
+          onSaved={(motor) => navigate(`/motors/${motor.id}`)}
+          onCancel={() => setShowForm(false)}
+        />
+      ) : (
+        <button type="button" className="btn btn-block" onClick={() => setShowForm(true)}>
+          + Tambah Motor
+        </button>
+      )}
 
       <input
         type="search"
